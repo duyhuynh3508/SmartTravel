@@ -1,0 +1,6 @@
+@SmartTravel.ItineraryService_HostAddress = http://localhost:5159
+
+GET {{SmartTravel.ItineraryService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

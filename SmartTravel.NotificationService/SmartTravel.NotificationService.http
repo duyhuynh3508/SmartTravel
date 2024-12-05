@@ -1,0 +1,6 @@
+@SmartTravel.NotificationService_HostAddress = http://localhost:5252
+
+GET {{SmartTravel.NotificationService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

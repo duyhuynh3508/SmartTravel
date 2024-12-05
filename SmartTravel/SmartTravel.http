@@ -1,0 +1,6 @@
+@SmartTravel_HostAddress = http://localhost:5182
+
+GET {{SmartTravel_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

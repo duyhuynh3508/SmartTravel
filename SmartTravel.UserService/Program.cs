@@ -1,3 +1,5 @@
+using SmartTravel.Shared.ServiceRegistration;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

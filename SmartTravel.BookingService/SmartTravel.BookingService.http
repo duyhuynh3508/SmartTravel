@@ -1,6 +1,0 @@
-@SmartTravel.BookingService_HostAddress = http://localhost:5296
-
-GET {{SmartTravel.BookingService_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

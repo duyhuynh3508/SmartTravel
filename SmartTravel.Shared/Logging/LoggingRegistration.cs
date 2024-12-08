@@ -12,8 +12,11 @@ namespace SmartTravel.Shared.Logging
                 .WriteTo.Console()
                 .WriteTo.File(path: $"{fileName}-.text",
                     restrictedToMinimumLevel: Serilog.Events.LogEventLevel.Information,
-                    outputTemplate: "{Timestamp: yyyy-MM-dd HH:mm:ss.fff zzz} [{Level: u3}] {message: lj} {NewLine} {Exception}",
-                    rollingInterval: RollingInterval.Day
+                    outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}",
+                    rollingInterval: RollingInterval.Day,
+                    retainedFileCountLimit: null,
+                    fileSizeLimitBytes: null,
+                    rollOnFileSizeLimit: false
                 ).CreateLogger();
 
             return loggerConfiguration;

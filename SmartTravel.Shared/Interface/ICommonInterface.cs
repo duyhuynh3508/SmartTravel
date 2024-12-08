@@ -10,8 +10,8 @@ namespace SmartTravel.Shared.Interface
         Task<Response> DeleteAsync(int id);
         Task<IEnumerable<T>> GetAllAsync();
         Task<T> GetByIdAsync(int id);
+        Task<IEnumerable<T>> GetByIdsAsync(IEnumerable<int> ids);
         Task<T> GetByNameAsync(string name);
-        Task<T> GetByIdAsync(string id);
         Task<T> GetByAsync(Expression<Func<T, bool>> predicate);
     }
 }

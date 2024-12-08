@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using SmartTravel.Shared.Extension.Enumerators;
 
-namespace SmartTravel.UserService.Models.Role
+namespace SmartTravel.Shared.Models.Role
 {
-    public record RoleModel(
-            int RoleId,
-            [Required] string RoleName
-        );
+    public class RoleModel : BaseModel
+    {
+        public RoleEnum RoleId { get; set; }
+        public string RoleName { get; set; }
+    }
 }

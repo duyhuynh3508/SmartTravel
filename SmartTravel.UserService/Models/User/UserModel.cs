@@ -1,18 +1,20 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using SmartTravel.Shared.Models;
+using SmartTravel.Shared.Extension.Enumerators;
+using SmartTravel.Shared.Models.Role;
 
-namespace SmartTravel.UserService.Models.User
+namespace SmartTravel.Shared.Models.User
 {
-    public record UserModel(
-            int UserId,
-            [Required, Range(1, int.MaxValue)] int RoleId,
-            [Required] string UserName,
-            [Required] string Email,
-            [Required] string Password,
-            [Required] string PasswordHash,
-            [Required] string FirstName,
-            [Required] string LastName,
-            [Required] DateTime DateOfBirth,
-            [Required] DateTime CreatedOn,
-            DateTime LastUpdatedOn
-        );
+    public class UserModel : BaseModel
+    {
+        public int UserId { get; set; }
+        public RoleEnum RoleId { get; set; }
+        public RoleModel Role { get; set; }
+        public required string UserName { get; set; }
+        public required string Email { get; set; }
+        public required string FirstName { get; set; }
+        public required string LastName { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public DateTime CreatedOn { get; set; }
+        public DateTime? LastUpdatedOn { get; set; }
+    } 
 }

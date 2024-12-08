@@ -33,7 +33,7 @@ namespace SmartTravel.Shared.ServiceRegistration
         {
             app.UseMiddleware<GlobalException>();
 
-            app.UseMiddleware<ServiceApiException>();
+            //app.UseMiddleware<ServiceApiException>();
 
             return app;
         }

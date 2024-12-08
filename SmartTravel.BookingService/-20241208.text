@@ -1,0 +1,158 @@
+2024-12-08 21:49:23.807 +07:00 [INF] 
+                Exception Occurred:
+                -------------------
+                Message: An error occurred while saving the entity changes. See the inner exception for details.
+                Inner Exception: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_tblBookings_tblBookingStatuses_BookingStatusId". The conflict occurred in database "SmartTravelDb", table "dbo.tblBookingStatuses", column 'BookingStatusId'.
+                Source: Microsoft.EntityFrameworkCore.Relational
+                Stack Trace:    at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at SmartTravel.BookingService.Repositories.BookingRepository.CreateAsync(BookingEntity entity) in C:\SmartTravel\SmartTravel\SmartTravel.BookingService\Repositories\IBookingRepository.cs:line 32
+                -------------------
+2024-12-08 21:49:23.845 +07:00 [WRN] An error occurred while saving the entity changes. See the inner exception for details.
+2024-12-08 21:55:38.608 +07:00 [INF] 
+                Exception Occurred:
+                -------------------
+                Message: An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+                Inner Exception: None
+                Source: System.Net.Http
+                Stack Trace:    at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at SmartTravel.BookingService.Services.BookingBusinessLayer.GetUserById(Int32 id) in C:\SmartTravel\SmartTravel\SmartTravel.BookingService\BusinessLayers\IBookingBusinessLayer.cs:line 43
+   at SmartTravel.BookingService.Services.BookingBusinessLayer.<>c__DisplayClass10_0.<<GetByIdAsync>b__0>d.MoveNext() in C:\SmartTravel\SmartTravel\SmartTravel.BookingService\BusinessLayers\IBookingBusinessLayer.cs:line 114
+--- End of stack trace from previous location ---
+   at Polly.ResiliencePipeline.<>c__10`1.<<ExecuteAsync>b__10_0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Outcome`1.GetResultOrRethrow()
+   at Polly.ResiliencePipeline.ExecuteAsync[TResult](Func`2 callback, CancellationToken cancellationToken)
+   at SmartTravel.BookingService.Services.BookingBusinessLayer.GetByIdAsync(Int32 id) in C:\SmartTravel\SmartTravel\SmartTravel.BookingService\BusinessLayers\IBookingBusinessLayer.cs:line 116
+   at SmartTravel.BookingService.Controllers.BookingController.GetBookingById(Int32 id) in C:\SmartTravel\SmartTravel\SmartTravel.BookingService\Controllers\BookingController.cs:line 71
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at SmartTravel.Shared.Middleware.GlobalException.InvokeAsync(HttpContext context) in C:\SmartTravel\SmartTravel\SmartTravel.Shared\Middleware\GlobalException.cs:line 19
+                -------------------
+2024-12-08 21:55:38.646 +07:00 [WRN] An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+2024-12-08 21:56:16.373 +07:00 [INF] 
+                Exception Occurred:
+                -------------------
+                Message: An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+                Inner Exception: None
+                Source: System.Net.Http
+                Stack Trace:    at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at SmartTravel.BookingService.Services.BookingBusinessLayer.GetUserById(Int32 id) in C:\SmartTravel\SmartTravel\SmartTravel.BookingService\BusinessLayers\IBookingBusinessLayer.cs:line 43
+   at SmartTravel.BookingService.Services.BookingBusinessLayer.<>c__DisplayClass10_0.<<GetByIdAsync>b__0>d.MoveNext() in C:\SmartTravel\SmartTravel\SmartTravel.BookingService\BusinessLayers\IBookingBusinessLayer.cs:line 114
+--- End of stack trace from previous location ---
+   at Polly.ResiliencePipeline.<>c__10`1.<<ExecuteAsync>b__10_0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Outcome`1.GetResultOrRethrow()
+   at Polly.ResiliencePipeline.ExecuteAsync[TResult](Func`2 callback, CancellationToken cancellationToken)
+   at SmartTravel.BookingService.Services.BookingBusinessLayer.GetByIdAsync(Int32 id) in C:\SmartTravel\SmartTravel\SmartTravel.BookingService\BusinessLayers\IBookingBusinessLayer.cs:line 116
+   at SmartTravel.BookingService.Controllers.BookingController.GetBookingById(Int32 id) in C:\SmartTravel\SmartTravel\SmartTravel.BookingService\Controllers\BookingController.cs:line 71
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at SmartTravel.Shared.Middleware.GlobalException.InvokeAsync(HttpContext context) in C:\SmartTravel\SmartTravel\SmartTravel.Shared\Middleware\GlobalException.cs:line 19
+                -------------------
+2024-12-08 21:56:16.382 +07:00 [WRN] An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+2024-12-08 21:56:46.399 +07:00 [INF] 
+                Exception Occurred:
+                -------------------
+                Message: An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+                Inner Exception: None
+                Source: System.Net.Http
+                Stack Trace:    at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at SmartTravel.BookingService.Services.BookingBusinessLayer.GetUserById(Int32 id) in C:\SmartTravel\SmartTravel\SmartTravel.BookingService\BusinessLayers\IBookingBusinessLayer.cs:line 43
+   at SmartTravel.BookingService.Services.BookingBusinessLayer.<>c__DisplayClass10_0.<<GetByIdAsync>b__0>d.MoveNext() in C:\SmartTravel\SmartTravel\SmartTravel.BookingService\BusinessLayers\IBookingBusinessLayer.cs:line 114
+--- End of stack trace from previous location ---
+   at Polly.ResiliencePipeline.<>c__10`1.<<ExecuteAsync>b__10_0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Outcome`1.GetResultOrRethrow()
+   at Polly.ResiliencePipeline.ExecuteAsync[TResult](Func`2 callback, CancellationToken cancellationToken)
+   at SmartTravel.BookingService.Services.BookingBusinessLayer.GetByIdAsync(Int32 id) in C:\SmartTravel\SmartTravel\SmartTravel.BookingService\BusinessLayers\IBookingBusinessLayer.cs:line 116
+   at SmartTravel.BookingService.Controllers.BookingController.GetBookingById(Int32 id) in C:\SmartTravel\SmartTravel\SmartTravel.BookingService\Controllers\BookingController.cs:line 71
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at SmartTravel.Shared.Middleware.GlobalException.InvokeAsync(HttpContext context) in C:\SmartTravel\SmartTravel\SmartTravel.Shared\Middleware\GlobalException.cs:line 19
+                -------------------
+2024-12-08 21:56:46.413 +07:00 [WRN] An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+2024-12-08 22:06:31.331 +07:00 [INF] 
+                Exception Occurred:
+                -------------------
+                Message: An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+                Inner Exception: None
+                Source: System.Net.Http
+                Stack Trace:    at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at SmartTravel.BookingService.Services.BookingBusinessLayer.GetUserById(Int32 id) in C:\SmartTravel\SmartTravel\SmartTravel.BookingService\BusinessLayers\IBookingBusinessLayer.cs:line 43
+   at SmartTravel.BookingService.Services.BookingBusinessLayer.<>c__DisplayClass10_0.<<GetByIdAsync>b__0>d.MoveNext() in C:\SmartTravel\SmartTravel\SmartTravel.BookingService\BusinessLayers\IBookingBusinessLayer.cs:line 114
+--- End of stack trace from previous location ---
+   at Polly.ResiliencePipeline.<>c__10`1.<<ExecuteAsync>b__10_0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Outcome`1.GetResultOrRethrow()
+   at Polly.ResiliencePipeline.ExecuteAsync[TResult](Func`2 callback, CancellationToken cancellationToken)
+   at SmartTravel.BookingService.Services.BookingBusinessLayer.GetByIdAsync(Int32 id) in C:\SmartTravel\SmartTravel\SmartTravel.BookingService\BusinessLayers\IBookingBusinessLayer.cs:line 116
+   at SmartTravel.BookingService.Controllers.BookingController.GetBookingById(Int32 id) in C:\SmartTravel\SmartTravel\SmartTravel.BookingService\Controllers\BookingController.cs:line 71
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at SmartTravel.Shared.Middleware.GlobalException.InvokeAsync(HttpContext context) in C:\SmartTravel\SmartTravel\SmartTravel.Shared\Middleware\GlobalException.cs:line 19
+                -------------------
+2024-12-08 22:06:31.381 +07:00 [WRN] An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+2024-12-08 22:17:31.032 +07:00 [WRN] OnRetry, Attempt: 0 Outcome The request was canceled due to the configured HttpClient.Timeout of 1 seconds elapsing.
+2024-12-08 22:18:50.920 +07:00 [WRN] OnRetry, Attempt: 0 Outcome The request was canceled due to the configured HttpClient.Timeout of 1 seconds elapsing.
+2024-12-08 22:20:10.728 +07:00 [WRN] OnRetry, Attempt: 0 Outcome The request was canceled due to the configured HttpClient.Timeout of 1 seconds elapsing.
+2024-12-08 22:21:06.379 +07:00 [WRN] OnRetry, Attempt: 0 Outcome The request was canceled due to the configured HttpClient.Timeout of 1 seconds elapsing.

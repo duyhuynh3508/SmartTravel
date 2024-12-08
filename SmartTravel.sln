@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartTravel.Shared", "Smart
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartTravel.UserService", "SmartTravel.UserService\SmartTravel.UserService.csproj", "{2E2DAACB-9268-4400-A022-B2B09B0BA7DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartTravel.BookingService", "SmartTravel.BookingService\SmartTravel.BookingService.csproj", "{4F40CDC1-600E-41B4-B094-BB39BF241129}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2E2DAACB-9268-4400-A022-B2B09B0BA7DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E2DAACB-9268-4400-A022-B2B09B0BA7DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E2DAACB-9268-4400-A022-B2B09B0BA7DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F40CDC1-600E-41B4-B094-BB39BF241129}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F40CDC1-600E-41B4-B094-BB39BF241129}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F40CDC1-600E-41B4-B094-BB39BF241129}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F40CDC1-600E-41B4-B094-BB39BF241129}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

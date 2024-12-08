@@ -12,9 +12,9 @@ namespace SmartTravel.Shared.Authentication
             services.AddAuthentication()
                 .AddJwtBearer("Bearer", options =>
                 {
-                    var key = Encoding.UTF8.GetBytes(config.GetSection("Jwt: key").Value!);
-                    string issuer = config.GetSection("Jwt: issuer").Value!;
-                    string audience = config.GetSection("Jwt: audience").Value!;
+                    var key = Encoding.UTF8.GetBytes(config.GetSection("Jwt:Key").Value!);
+                    string issuer = config.GetSection("Jwt:Issuer").Value!;
+                    string audience = config.GetSection("Jwt:Audience").Value!;
 
                     options.RequireHttpsMetadata = false;
                     options.SaveToken = true;

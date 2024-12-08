@@ -1,4 +1,8 @@
 ﻿namespace SmartTravel.Shared.ResponseExtension
 {
-    public record Response(bool flag = false, string message = "");
+    public record Response(
+        ResponseResultEnum responseResult = ResponseResultEnum.None, 
+        string message = "", object data = null, 
+        IEnumerable<object> collection = null
+        );
 }
